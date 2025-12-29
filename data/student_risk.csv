@@ -1,0 +1,9 @@
+hours_studied,attendance,previous_score,assignments_completed,internal_marks,risk_level
+2,60,50,40,45,High
+3,65,55,50,50,High
+4,70,60,60,55,Medium
+5,75,65,65,60,Medium
+6,80,70,70,68,Medium
+7,85,75,75,72,Low
+8,90,80,80,78,Low
+9,92,85,85,82,Low
