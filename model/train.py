@@ -46,3 +46,14 @@ print(classification_report(Y_test, Y_pred, target_names=label_encoder.classes_)
 
 print("\nConfussion Matrix")
 print(confusion_matrix(Y_test, Y_pred))
+
+#feature importance analysis
+importances = model.feature_importances_
+
+feature_importance_df = pd.DataFrame({
+    "Feature": X.columns,
+    "Importance": importances
+}).sort_values(by="Importance", ascending=False)
+
+print("\nFeature Importance:")
+print(feature_importance_df)
