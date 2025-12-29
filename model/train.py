@@ -57,3 +57,21 @@ feature_importance_df = pd.DataFrame({
 
 print("\nFeature Importance:")
 print(feature_importance_df)
+
+
+import pickle
+import os
+
+#create app directory if it does'nt exsist
+os.makedirs("../app",exist_ok=True)
+
+#Save trained model
+with open("../app/risk_model.pkl", "wb") as f:
+    pickle.dump(model, f)
+
+#Save label encoder   
+with open("../app/label_encoder.pkl", "wb") as f:
+    pickle.dump(label_encoder, f)
+
+
+print("\nModel and labelEncoder saved successfully")
