@@ -62,15 +62,21 @@ print(feature_importance_df)
 import pickle
 import os
 
-#create app directory if it does'nt exsist
-os.makedirs("../app",exist_ok=True)
+#Project root
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+#path to app directory
+APP_DIR = os.path.join(BASE_DIR, "app")
+os.makedirs(APP_DIR, exist_ok=True)
 
 #Save trained model
-with open("../app/risk_model.pkl", "wb") as f:
+MODEL_PATH = os.path.join(APP_DIR, "risk_model.pkl")
+with open(MODEL_PATH, "wb") as f:
     pickle.dump(model, f)
 
-#Save label encoder   
-with open("../app/label_encoder.pkl", "wb") as f:
+#Save label encoder 
+ENCODER_PATH = os.path.join(APP_DIR, "label_encoder.pkl")  
+with open(ENCODER_PATH, "wb") as f:
     pickle.dump(label_encoder, f)
 
 
