@@ -51,8 +51,8 @@ def home():
         encoded_prediction = model.predict(input_data)[0]
         print("ENCODED PREDICTION:", encoded_prediction)
 
-        pridiction = label_encoder.inverse_transform([encoded_prediction])[0]
-        print("FINAL PREDICTION:", pridiction)
+        prediction = label_encoder.inverse_transform([encoded_prediction])[0]
+        print("FINAL PREDICTION:", prediction)
     
     return render_template('index.html', prediction=prediction)
 
